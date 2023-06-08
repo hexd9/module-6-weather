@@ -1,5 +1,6 @@
 let apiKey = "3a942d8d09a83e9a262f11397f7401cb";
 let queryUrl = "https://api.openweathermap.org/data/2.5/forecast?";
+let searchHistory = JSON.parse(localStorage.getItem("searchHistory")) || [];
 
 function getApi() {
   const newName = document.getElementById("cityInput");
@@ -35,6 +36,10 @@ function getApi() {
           "Wind: " + Number(forecastData.wind.speed).toFixed(1) + "MPH";
         dayContainer.appendChild(windElement);
       }
+      if (!searchHistory.includes(newName.value)) {
+        searchHistory.push(newName.value);
+        localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
+      }
     })
     .catch(function (error) {
       console.log("Error:", error);
@@ -67,3 +72,14 @@ for (var i = 0; i < 5; i++) {
 }
 
 document.getElementById("searchButton").addEventListener("click", getApi);
+
+function cityHistory() {
+  let searchDiv = document.getElementById("searchHistory");
+
+  searchHistory.forEach(function (city) {
+    let searchedCity = document.createElement("p");
+    searchedCity.textContent = city;
+
+    searchDiv.appendChild(searchedCity);
+  });
+}
