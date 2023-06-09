@@ -25,7 +25,7 @@ The webpage will then fetch the weather data for the city you entered and displa
 
 6. Search History is saved under local storage. 
 
-![alt text](assets/images/WeatherForecast.png)
+![app image](assets/images/WeatherForecast.png)
 
 ## Credits
 
