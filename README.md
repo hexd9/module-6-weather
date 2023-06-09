@@ -25,6 +25,8 @@ As a traveler I wanted to have an efficient and handy tool that allowed me to kn
 
 6. Search History is saved under local storage.
 
+https://hexd9.github.io/module-6-weather/
+
 ![app image](assets/images/WeatherForecast.png)
 
 ## Credits
